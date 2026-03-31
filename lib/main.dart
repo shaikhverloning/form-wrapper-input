@@ -66,17 +66,12 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
                   helperText: 'Enter a unique username',
                   isOptional: true,
                   // warningMessage: 'Username looks good, but double-check!',
-                  validators: [
-                    requiredValidator,
-                    emailValidator
-                  ],
+                  validators: [requiredValidator, emailValidator],
 
                   type: InputType.text,
                   provider: usernameFieldProvider,
                 ),
-                 Text(
-                  ' Number Value: ${ref.watch(amountFieldProvider).value}',
-                ),
+                Text(' Number Value: ${ref.watch(amountFieldProvider).value}'),
                 Text(' Isdirty: ${ref.watch(amountFieldProvider).isDirty}'),
                 Text(' IsValid: ${ref.watch(amountFieldProvider).isValid}'),
                 FormFieldWrapper(

@@ -19,7 +19,6 @@ class CustomTextInput extends StatelessWidget {
   Widget build(BuildContext context) {
     final text = state?.value ?? initialValue ?? '';
     return TextFormField(
-
       controller: TextEditingController(text: text)
         ..selection = TextSelection.collapsed(offset: text.length),
       onChanged: (val) {
