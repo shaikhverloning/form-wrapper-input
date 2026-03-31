@@ -30,6 +30,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-flutter-
 
+    - name: Create .env file from example
+      run: cp .env.example .env
+
     - name: Install Dependencies
       run: flutter pub get
 
