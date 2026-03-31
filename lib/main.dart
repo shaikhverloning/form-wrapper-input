@@ -68,15 +68,21 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
                   // warningMessage: 'Username looks good, but double-check!',
                   validators: [
                     requiredValidator,
+                    emailValidator
                   ],
 
                   type: InputType.text,
                   provider: usernameFieldProvider,
                 ),
+                 Text(
+                  ' Number Value: ${ref.watch(amountFieldProvider).value}',
+                ),
+                Text(' Isdirty: ${ref.watch(amountFieldProvider).isDirty}'),
+                Text(' IsValid: ${ref.watch(amountFieldProvider).isValid}'),
                 FormFieldWrapper(
                   validateOnFieldUpdate: true,
                   label: 'Number Input',
-                  isOptional: false,
+                  isOptional: true,
                   validators: [
                     (value) => minLengthValidator(value, 3),
                     (value) => maxLengthValidator(value, 10),
